@@ -1,10 +1,11 @@
-import gpiozero
+#import gpiozero
 
 class Motor():
     def __init__(self):
         self.position = None
         self.max_position = None
         self.min_position = None 
+        self.neutral = None
 
     #move motor to position
     def move_position(self,position):
