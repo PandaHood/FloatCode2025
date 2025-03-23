@@ -1,5 +1,6 @@
 import time
 import datetime
+import ms5837
 
 import src.util as util 
 import src.depth_sensor as depth_sensor
@@ -10,6 +11,7 @@ import src.motor_code as motor_code
 
 
 def main():
+    sensor = ms5837.MS5837()
     motor_obj = motor_code.Motor()
     team_number = input("Team Number: ")
     profile_num = input("Profile Number (1 or 2): ")
@@ -25,7 +27,7 @@ def main():
     # while true
     while True:
         # when depth reaches ~2 meters 
-        if depth_sensor.read_depth()[0] >= 2: # check if this is in meters 
+        if depth_sensor.read_depth(sensor)[0] >= 2: # check if this is in meters 
             motor_obj.move_position(motor_obj.neutral)
             break
     
@@ -34,7 +36,7 @@ def main():
     while True:
         if end - start >= 46: # check if it is in seconds
             break
-        util.output_txt(profile_num,end-start,5,5)#depth_sensor.read_depth()[0], depth_sensor.read_depth()[1])
+        util.output_txt(profile_num,end-start,depth_sensor.read_depth(sensor)[0], depth_sensor.read_depth(sensor)[1])
         end = time.time()
         time.sleep(1)
 
