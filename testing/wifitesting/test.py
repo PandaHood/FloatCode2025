@@ -9,5 +9,5 @@ while True:
     sleep(1)
     red.off()
     sleep(1)
-    if time() - start >= 60:
+    if time() - start >= 120:
         break
