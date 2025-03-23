@@ -1,7 +1,7 @@
 from src.depth_sensor import *
 
 if __name__ == "__main__":
-    num_read = input("How many times to run")
+    num_read = int(input("How many times to run"))
 
     i = 0
     while i < num_read:
