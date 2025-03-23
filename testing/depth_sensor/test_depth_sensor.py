@@ -1,4 +1,4 @@
-from depth_sensor import *
+from src.depth_sensor import *
 
 if __name__ == "__main__":
     num_read = input("How many times to run")
