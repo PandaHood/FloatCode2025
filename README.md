@@ -1,13 +1,11 @@
-make sure https://github.com/bluerobotics/ms5837-python is installed
-add requirments.txt
-- screen command 
+Make sure https://github.com/bluerobotics/ms5837-python is installed
 - gpiozero
 
-run screen command 
+Run $ pip install -r requirements.txt for python package requirements
 
-reconnect at ssh at (add proper ssh address )
+How to run code:
 
-add set-up 
+$ screen python3 [python file]
 
-
-need to test depth sensor
+have dhcp client list open, when program ends and float gets back
+in range, reconnect at ssh at new raspberry pi address
