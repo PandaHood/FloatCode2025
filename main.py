@@ -2,7 +2,7 @@ import time
 import datetime
 
 import src.util as util 
-#import src.depth_sensor as depth_sensor
+import src.depth_sensor as depth_sensor
 import src.motor_code as motor_code
 
 ## Main loop
@@ -25,7 +25,7 @@ def main():
     # while true
     while True:
         # when depth reaches ~2 meters 
-        #if depth_sensor.read_depth()[0] >= 2: # check if this is in meters 
+        if depth_sensor.read_depth()[0] >= 2: # check if this is in meters 
             motor_obj.move_position(motor_obj.neutral)
             break
     
