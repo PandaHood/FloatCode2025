@@ -13,7 +13,7 @@ import src.motor_code as motor_code
 def main():
     sensor = ms5837.MS5837()
     sensor.init()
-    motor_obj = motor_code.Motor(14,15)
+    #motor_obj = motor_code.Motor(14,15)
     # wait perhaps
 
     for i in range(100):
