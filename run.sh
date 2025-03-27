@@ -6,4 +6,4 @@ python3 info.py
 
 # Run the second Python script
 echo "Running second_script.py..."
-screen -dmS mysession python3 /path/to/script.py
+screen python3 main.py
