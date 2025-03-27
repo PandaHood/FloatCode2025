@@ -13,3 +13,6 @@ $ screen python -m testing.[dir].[file] for running test package files
 
 have dhcp client list open, when program ends and float gets back
 in range, reconnect at ssh at new raspberry pi address
+
+chmod +x run.sh to activate script
+
