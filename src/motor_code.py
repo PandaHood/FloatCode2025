@@ -1,7 +1,7 @@
 from gpiozero import DigitalOutputDevice, Button
 import time
 
-class StepperMotor:
+class Motor:
     def __init__(self, 
                  step_pin, 
                  dir_pin, 
