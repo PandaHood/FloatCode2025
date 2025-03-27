@@ -10,7 +10,7 @@ def read_depth(sensor):
                 sensor.depth(),
                 sensor.temperature(), # Default is degrees C (no arguments)
                 sensor.temperature(ms5837.UNITS_Farenheit))) # Request Farenheit
-                return sensor.depth(), sensor.pressure(ms5837.UNITS_psi)
+                return (sensor.depth(), sensor.pressure(ms5837.UNITS_psi))
         else:
                 print("Sensor read failed!")
                 exit(1)
