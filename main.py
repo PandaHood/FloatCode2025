@@ -13,7 +13,7 @@ import src.motor_code as motor_code
 def main():
     sensor = ms5837.MS5837()
     sensor.init()
-    motor_obj = motor_code.Motor()
+    motor_obj = motor_code.Motor(14,15)
     team_number = input("Team Number: ")
     profile_num = input("Profile Number (1 or 2): ")
     # check what else we need to print out
