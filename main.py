@@ -15,9 +15,13 @@ def main():
     sensor.init()
     motor_obj = motor_code.Motor(14,15)
     # wait perhaps
+
+    for i in range(100):
+        util.output_txt(i,depth_sensor.read_depth(sensor)[0], depth_sensor.read_depth(sensor)[1])
+        time.sleep(1)
     
     
-    # move syringe to take in water 
+    """ # move syringe to take in water 
     motor_obj.move_motor_max_position()
 
     # while true
@@ -39,7 +43,7 @@ def main():
 
 
     motor_obj.move_motor_min_position()
-    print("End")
+    print("End") """
         
 
 
