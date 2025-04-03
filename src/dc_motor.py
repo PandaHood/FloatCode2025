@@ -13,11 +13,15 @@ class DC:
     def write_direction(self, direction, state):
         if state == "on" and direction == "1":
             self.direction_1.on()
+            print("1 on")
         elif state == "on" and direction == "2":
             self.direction_2.on()
+            print("2 on")
         elif state == "off" and direction == "1":
             self.direction_1.off()
+            print("1 off")
         elif state == "off" and direction == "2":
             self.direction_2.off()
+            print("2 off")
 
 
