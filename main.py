@@ -48,6 +48,7 @@ def main():
     start = time.time()
     end = time.time()
     while True:
+        print("Before")
         if end - start >= 120: # check if it is in seconds
             break
         dcmotor.write_direction("on", "1")
@@ -58,6 +59,8 @@ def main():
         time.sleep(10)
         dcmotor.write_direction("off", "2")
         time.sleep(10)
+
+        print(end)
 
 
         end = time.time()
