@@ -1,11 +1,11 @@
-from gpiozero import DigitalOutputDevice, Button
+from gpiozero import LED
 
 
 class DC:
 
     def __init__(self, direction_pin_1, direction_pin_2):
-        self.direction_1 = DigitalOutputDevice(direction_pin_1)
-        self.direction_2 = DigitalOutputDevice(direction_pin_2)
+        self.direction_1 = LED(direction_pin_1)
+        self.direction_2 = LED(direction_pin_2)
 
         self.write_direction("off","1")
         self.write_direction("off","2")
