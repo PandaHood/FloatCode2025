@@ -1,4 +1,4 @@
-from src.motor_code import *
+from src.stepper import *
 
 if __name__ == "__main__":
     # Example usage (pin numbers will vary)
