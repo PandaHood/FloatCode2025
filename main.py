@@ -1,9 +1,9 @@
 import time
 import datetime
-import ms5837
+#import ms5837
 
 import src.util as util 
-import src.depth_sensor as depth_sensor
+#import src.depth_sensor as depth_sensor
 import src.dc_motor as motor
 
 ## Main loop
@@ -59,7 +59,7 @@ def main():
         dcmotor.write_direction("off", "2")
         time.sleep(10)
 
-        
+
         end = time.time()
         time.sleep(1)
 
