@@ -24,13 +24,13 @@ def main():
         if end - start >= 120: # check if it is in seconds
             break
         dcmotor.write_direction("1", "on")
-        time.sleep(10)
+        time.sleep(5)
         dcmotor.write_direction("1", "off")
-        time.sleep(10)
+        time.sleep(5)
         dcmotor.write_direction("2", "on")
-        time.sleep(10)
+        time.sleep(5)
         dcmotor.write_direction("2", "off")
-        time.sleep(10)
+        time.sleep(5)
 
         print(depth_sensor.read_depth(sensor))
 
