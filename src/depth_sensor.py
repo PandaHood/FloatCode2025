@@ -1,4 +1,5 @@
 import ms5837
+import time 
 
 def init():
      # 1) Use the 02BA class, not the generic MS5837:
