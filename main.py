@@ -7,13 +7,9 @@ import src.depth_sensor as depth_sensor
 import src.dc_motor as motor
 
 ## Main loop
-
-
-
 def main():
-    sensor = ms5837.MS5837()
-    sensor.init()
-    
+   
+    sensor = depth_sensor.init()
     dcmotor = motor.DC(4,27)
 
 

@@ -1,16 +1,28 @@
 import ms5837
 
+def init():
+     # 1) Use the 02BA class, not the generic MS5837:
+    sensor = ms5837.MS5837_02BA()
+    if not sensor.init():
+        raise RuntimeError("Could not initialize MS5837_02BA")
 
+    # 2) (Optional) If you’re in saltwater, override the default density:
+    # sensor.setFluidDensity(1029.0)
+
+    # 3) Calibrate zero at the surface:
+    time.sleep(1)              # let sensor stabilize
+    if not sensor.read():
+        raise RuntimeError("Failed to read for zero-offset")
+    surface_pressure = sensor.pressure()
+
+    print(f"Zero-surface pressure = {surface_pressure:.1f} mbar")
+
+    return sensor
 # Print readings
-def read_depth(sensor):        
-        if sensor.read():
-                print(("P: %0.1f mbar  %0.3f psi\tDepth: %0.3f\tT: %0.2f C  %0.2f F") % (
-                sensor.pressure(), # Default is mbar (no arguments)
-                sensor.pressure(ms5837.UNITS_psi), # Request psi
-                sensor.depth(),
-                sensor.temperature(), # Default is degrees C (no arguments)
-                sensor.temperature(ms5837.UNITS_Farenheit))) # Request Farenheit
-                return (sensor.depth(), sensor.pressure(ms5837.UNITS_psi))
-        else:
-                print("Sensor read failed!")
-                exit(1)
+def read_depth(sensor):
+    # Trigger a new I2C read; returns True on success
+    if not sensor.read():
+        return None, None
+    # You can either use sensor.depth() (which applies default density)
+    # or compute depth from an adjusted pressure:
+    return sensor.depth(), sensor.pressure()
