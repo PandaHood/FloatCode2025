@@ -10,7 +10,7 @@ import src.dc_motor as motor
 def main():
    
     sensor = depth_sensor.init()
-    dcmotor = motor.DC(4,27)
+    dcmotor = motor.DC(22,23)
 
 
     start = time.time()

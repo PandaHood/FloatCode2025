@@ -6,7 +6,9 @@ class DC:
     def __init__(self, direction_pin_1, direction_pin_2):
         self.direction_1 = LED(direction_pin_1)
         self.direction_2 = LED(direction_pin_2)
+        self.pwm = LED(13)
 
+        self.pwm.on()
         self.write_direction("off","1")
         self.write_direction("off","2")
 
