@@ -76,6 +76,21 @@ class FloatController:
         self.ascend_to_surface()
         self.wait_for_transfer()
 
+    def run_trash_mission(self):
+        # start by going to maximum positive bouyancy
+        self.max_positive_bouyancy()
+
+        # ensure logging is working
+        while self.times_logged < 5:
+            self.add_log_entry()
+
+        # go to max negative bouyancy and count how many steps that takes
+        self.max_negative_bouyancy(update_count=True)
+        while self.times_logged < 15:
+            self.add_log_entry()
+
+        self.max_positive_bouyancy(update_count=True)
+
 
     # Mission Methods
     def max_positive_bouyancy(self):
