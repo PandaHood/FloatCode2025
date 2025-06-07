@@ -9,7 +9,7 @@ import src.dc_motor as motor
 ## Main loop
 def main():
    
-# sensor = depth_sensor.init()
+    sensor = depth_sensor.init()
     dcmotor = motor.DC(22,23)
 
 
@@ -28,7 +28,7 @@ def main():
         dcmotor.write_direction("2", "off")
         time.sleep(5)
 
-       # print(depth_sensor.read_depth(sensor))
+        print(depth_sensor.read_depth(sensor))
 
 
         end = time.time()
