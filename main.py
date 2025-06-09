@@ -15,24 +15,27 @@ def main():
 
     start = time.time()
     end = time.time()
-    while True:
-        print("Before")
-        if end - start >= 120: # check if it is in seconds
-            break
-        dcmotor.write_direction("1", "on")
-        time.sleep(5)
-        dcmotor.write_direction("1", "off")
-        time.sleep(5)
-        dcmotor.write_direction("2", "on")
-        time.sleep(5)
-        dcmotor.write_direction("2", "off")
-        time.sleep(5)
+    fail = 0
+    for _ in range(100):
+        try:
+            print("Before")
+            dcmotor.write_direction("1", "on")
+            time.sleep(0.2)
+            dcmotor.write_direction("1", "off")
+            time.sleep(0.2)
+            dcmotor.write_direction("2", "on")
+            time.sleep(0.2)
+            dcmotor.write_direction("2", "off")
+            time.sleep(0.2)
 
-        print(depth_sensor.read_depth(sensor))
+            print(depth_sensor.read_depth(sensor))
 
 
-        end = time.time()
-        time.sleep(1)
+            end = time.time()
+            time.sleep(1)
+        except:
+            fail+=1
+    print(fail)
 
 
 
