@@ -29,7 +29,7 @@ def plot_depth_over_time(times: List[datetime], depths):
     for i, label in enumerate(labels):
         if i % 12 != 0:
             label.set_visible(False)
-    plt.xlabel('Time')
+    plt.xlabel('Time (UTC)')
     plt.ylabel('Depth (m)')
     plt.title('Depth over Time')
     plt.xticks(rotation=45)
